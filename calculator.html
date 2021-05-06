@@ -1,17 +1,22 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<script>
 		//function that display value
 		function dis(val)
 		{
+			
 			document.getElementById("result").value+=val;
 		}
 		
 		//function that evaluates the digit and return result
 		function solve()
 		{
-			let x = document.getElementById("result").value
+			let x = document.getElementById("result").value;
+			let y=eval(x);
 		
 		document.getElementById("result").value = y
 		}
@@ -26,21 +31,31 @@
 	<!-- for styling -->
 	<style>
 		body{
-			background-color: black;
-		}
+     			
+			background-color :#222;
+
+	 		}
+
+		
 		.table{
-			margin-left: 400px;
-			margin-top: 80px;
+			margin: 10px auto;
+        margin-top:10vmin;
 			font-size: large;
 			border-color:red;
-			border: 5px;
+		
+			border-radius: 4mm;
+			padding:20px;
+			width:300px;
+			box-shadow:0 0 2vmin 2vmin #333;
+
+			
 		}
 		.title{
            font-size:30px;
-		   font-family:Verdana, Geneva, Tahoma, sans-serif;
-		   font-style: inherit;
-			margin-top: 25px;
-			margin-left: 450px;
+		
+		   font-style:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			margin-left:37.5%;
+			margin-top:30px;
 		   color:rgb(235, 22, 22);
 
 		}
@@ -48,61 +63,94 @@
 
 		input[type="button"]
 		{
-		background-color:crimson;
-		color: black;
-		border: solid black 2px;
-		font-size: larger;
-		width:103px;
-		height:60px;
+			height: 60px;
+        width: 60px;
+        padding: 1px; 
+        background:transparent; 
+        border:2px solid #f00;
+        margin: 4.5px; 
+        font-size: 15px;    
+        border-radius:10px;
+        color:#fff;
+        outline:none;
+        font-size:20px;
+
+
 		}
 
 		input[type="text"]
 		{
 		background-color:aquamarine;
 		border: solid black 2px;
-		width:322px;
-		height:70px;
+		width:100%;
+		border:1px solid #000; 
+		height:60px;
 		text-align: right;
 		font-size: 40px;
+		}
+
+		.ans:hover{
+			background-color: rgb(147, 235, 147);
+			font-size: 30px;
+
+		}
+		.btn-bck{
+        margin: 10px 15px;
+		}
+		.btn:hover{
+			background-color:#333;
+
+		}
+		.clear:hover{
+			background-color: red;
+			font-size: 30px;
 		}
 	</style>
 </head>
 <!-- create table -->
 <body class="body">
 	<div class = title >SIMPLE CALCULATOR</div>
-	<table border="1px" class="table">
+	<table  class="table">
 		<tr>
 			<td colspan="3"><input type="text" id="result"/></td>
 			<!-- clr() function will call clr to clear all value -->
-			<td><input type="button" value="C" onclick="clr()" style="height:67px";/ > </td>
+			<td><input  class ="clear" type="button" value="C" onclick="clr()" style="border-color: red";> </td>
 		</tr>
+		<div class="btn-bck">
 		<tr>
 			<!-- create button and assign value to each button -->
 			<!-- dis("1") will call function dis to display value -->
-			<td><input type="button" value="1" onclick="dis('1')"/> </td>
-			<td><input type="button" value="2" onclick="dis('2')"/> </td>
-			<td><input type="button" value="3" onclick="dis('3')"/> </td>
-			<td><input type="button" value="/" onclick="dis('/')"style="background-color: tomato;font-size:30px;";/> </td>
+
+			<td><input class="btn" type="button" value="1" onclick="dis('1')" style="border-color: red;"> </td>
+			<td><input class="btn" type="button" value="2" onclick="dis('2')"style="border-color: red;"> </td>
+			<td><input class="btn" type="button" value="3" onclick="dis('3')"style="border-color: red;"> </td>
+
+			<td><input class="btn"type="button" value="/" onclick="dis('/')"style="border-color:orange";/> </td>
 		</tr>
 		<tr>
-			<td><input type="button" value="4" onclick="dis('4')"/> </td>
-			<td><input type="button" value="5" onclick="dis('5')"/> </td>
-			<td><input type="button" value="6" onclick="dis('6')"/> </td>
-			<td><input type="button" value="-" onclick="dis('-')"style="background-color: tomato ;font-size:30px";/> </td>
+			<td><input class="btn"type="button" value="4" onclick="dis('4')"style="border-color: red;"> </td>
+			<td><input class="btn" type="button" value="5" onclick="dis('5')"style="border-color: red;"> </td>
+			<td><input class="btn" type="button" value="6" onclick="dis('6')"style="border-color: red;"> </td>
+			
+			<td><input class="btn" type="button" value="-" onclick="dis('-')"style="border-color: orange;"/> </td>
 		</tr>
 		<tr>
-			<td><input type="button" value="7" onclick="dis('7')"/> </td>
-			<td><input type="button" value="8" onclick="dis('8')"/> </td>
-			<td><input type="button" value="9" onclick="dis('9')"/> </td>
-			<td><input type="button" value="+" onclick="dis('+')"style="background-color: tomato; font-size:30px";/> </td>
+			<td><input class="btn" type="button" value="7" onclick="dis('7')"style="border-color: red;"> </td>
+			<td><input class="btn" type="button" value="8" onclick="dis('8')"style="border-color: red;"> </td>
+			<td><input class="btn" type="button" value="9" onclick="dis('9')"style="border-color: red;"> </td>
+
+			<td><input class="btn" type="button" value="+" onclick="dis('+')"style="border-color:orange";/> </td>
 		</tr>
 		<tr>
-			<td><input type="button" value="." onclick="dis('.')" style="font-size: 30px;"/> </td>
-			<td><input type="button" value="0" onclick="dis('0')"/> </td>
+			
+
+			<td><input  class="btn" type="button" value="." onclick="dis('.')"style="border-color:red"> </td>
+			<td><input class="btn" type="button" value="0" onclick="dis('0')"style="border-color: red;"> </td>
 			<!-- solve function call function solve to evaluate value -->
-			<td><input type="button" value="=" onclick="solve()" style="background-color: turquoise; font-size: 35px;"/> </td>
-			<td><input type="button" value="*" onclick="dis('*')" style="background-color: tomato;font-size: 35px;"/> </td>
-		</tr>
+
+			<td><input class="ans" type="button" value="=" onclick="solve()" style="border-color:rgb(85, 243, 151);"> </td>
+			<td><input class="btn" type="button" value="*" onclick="dis('*')" style="border-color: rgb(233, 88, 88);"/> </td>
+		</tr></div>
 	</table>
 </body>
 </html>
